@@ -22,7 +22,7 @@ class GameMap:
         return (self.max_x * self.max_y)
 
     def is_valid_position(self, position: Position) -> bool:
-        pass
+        return True
 
     def calculate_position(
         self, starting_position: Position, direction: Direction

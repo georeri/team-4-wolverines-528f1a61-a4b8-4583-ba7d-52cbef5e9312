@@ -10,14 +10,12 @@ class InvalidMoveException(Exception):
 
 class Character:
     name: str
-    map: GameMap = None
+    map: GameMap
     position: Position = None
-
-    def __init__(self, name: str):
-        self.name = name or DEFAULT_CHARACTER_NAME
 
     def __init__(self, name: str ):
         self.name = name or DEFAULT_CHARACTER_NAME
+     
 
     def setposition(self, position: Position ):
         self.position = position or None
@@ -27,6 +25,7 @@ class Character:
 
     def enter_map(self, game_map: GameMap):
         self.map = game_map
+    
 
     def move(self, direction: Direction):
         currentposition = self.position
@@ -48,8 +47,8 @@ class Character:
 
             case _:
                 print("Invalid direction")
-        
-        if map.is_valid_position(tempposition)
+
+        if (self.map.is_valid_position(tempposition)):
             self.position = tempposition
 
 
