@@ -19,3 +19,10 @@ class TestGameController(TestCase):
         testobj = GameController()
         testobj.status.set_character_position(Position(11,11))
         self.assertEqual(testobj.status.current_position, Position(11,11))
+
+    def test_move(self):
+         testobj = GameController()
+         cp = Position()
+         cp = testobj.character.position
+         testobj.character.move("n")
+         self.assertEqual(first, second)
