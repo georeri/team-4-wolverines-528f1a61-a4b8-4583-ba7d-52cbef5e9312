@@ -11,3 +11,14 @@ class TestCharacter(TestCase):
         self.assertEqual(testobj.name, expected_name)
         expected_position = None
         self.assertEqual(testobj.position, expected_position)
+
+    def test_get_name(self):
+        expected_name = "arbitrary"
+        testobj = Character(expected_name)
+        self.assertEqual(testobj.getname(), expected_name)
+
+    def test_get_position(self):
+        expected_name = "arbitrary"
+        testobj = Character(expected_name)
+        expected_position = None
+        self.assertEqual(testobj.getposition(), expected_position)

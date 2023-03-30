@@ -16,8 +16,14 @@ class Character:
     def __init__(self, name: str):
         self.name = name or DEFAULT_CHARACTER_NAME
 
+    def getname(self):
+        return f"{self.name}"
+
     def enter_map(self, game_map: GameMap):
         pass
 
     def move(self, direction: Direction):
         pass
+
+    def getposition(self):
+        return (self.position)
