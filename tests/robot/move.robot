@@ -3,15 +3,15 @@ Documentation     I want to move my character. If they attempt to move past a bo
 Test Template     Move character
 Library           MoveLibrary.py
 
-*** Test Cases ***      StartingX   StartingY   Direction   EndingX EndingY
-Move N to position      0           0           NORTH       0       1
-Move S to position      9           9           SOUTH       9       8
-Move E to position      0           0           EAST        1       0
-Move W to position      9           9           WEST        8       9
-Move N to boundary      9           9           NORTH       9       9
-Move S to boundary      0           0           SOUTH       0       0
-Move E to boundary      9           9           EAST        9       9
-Move W to boundary      0           0           WEST        0       0
+*** Test Cases ***      StartingX   StartingY   StartingMoveCount   Direction   EndingX EndingY EndingMoveCount
+Move N to position      0           0           1                   NORTH       0       1       2
+Move S to position      9           9           5                   SOUTH       9       8       6
+Move E to position      0           0           9                   EAST        1       0       10
+Move W to position      9           9           22                  WEST        8       9       23
+Move N to boundary      9           9           83                  NORTH       9       9       84
+Move S to boundary      0           0           101                 SOUTH       0       0       102
+Move E to boundary      9           9           1001                EAST        9       9       1002
+Move W to boundary      0           0           10001               WEST        0       0       10002
 
 
 
