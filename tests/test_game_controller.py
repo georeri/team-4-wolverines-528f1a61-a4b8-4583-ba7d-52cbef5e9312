@@ -12,5 +12,5 @@ class TestGameController(TestCase):
         self.assertEqual(testobj.status.move_count, 0)
         self.assertEqual(
             testobj.status.current_position,
-            None,
+            Position(11,11),
         )

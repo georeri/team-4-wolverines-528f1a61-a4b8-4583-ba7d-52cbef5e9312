@@ -4,16 +4,21 @@ from levelup.character import Character, DEFAULT_CHARACTER_NAME, InvalidMoveExce
 from levelup.map import Direction, GameMap
 from levelup.position import Position
 
-
+ARBITRARY_INVALID_INITIALIZED_POSITION = Position(11, 11)
 @dataclass
 class GameStatus:
     move_count: int = 0
+    character: Character = Character(DEFAULT_CHARACTER_NAME)
     running: bool = False
-    current_position: Position = None
+    
+    current_position: tuple = ARBITRARY_INVALID_INITIALIZED_POSITION
 
     def __str__(self):
         return f"Moved {self.move_count} times, currently on position {self.current_position}"
 
+    def set_character_position(self, xycoordinates: tuple) -> None:
+        print(f"Set character position state for testing")
+        #TODO: IMPLEMENT THIS
 
 class CharacterNotFoundException(Exception):
     pass
