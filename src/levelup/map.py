@@ -12,15 +12,14 @@ class Direction(Enum):
 
 class GameMap:
     starting_position: Position = Position(0, 0)
-    size: Tuple[int, int] = (10, 10)
-    position_count: int
-    positions: List[Position]
+    max_x = 10
+    max_y = 10
 
     def __init__(self):
-        self.create_positions()
-
-    def create_positions(self) -> None:
         pass
+
+    def get_size(self):
+        return (self.max_x * self.max_y)
 
     def is_valid_position(self, position: Position) -> bool:
         pass
