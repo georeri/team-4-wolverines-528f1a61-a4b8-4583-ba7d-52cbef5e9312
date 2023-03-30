@@ -16,9 +16,9 @@ class GameStatus:
     def __str__(self):
         return f"Moved {self.move_count} times, currently on position {self.current_position}"
 
-    def set_character_position(self, xycoordinates: tuple) -> None:
+    def set_character_position(self, position: Position) -> None:
         print(f"Set character position state for testing")
-        #TODO: IMPLEMENT THIS
+        self.character.position = position
 
 class CharacterNotFoundException(Exception):
     pass

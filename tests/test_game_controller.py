@@ -14,3 +14,8 @@ class TestGameController(TestCase):
             testobj.status.current_position,
             Position(11,11),
         )
+
+    def test_set_character_position(self): 
+        testobj = GameController()
+        testobj.status.set_character_position(Position(11,11))
+        self.assertEqual(testobj.status.current_position, Position(11,11))
