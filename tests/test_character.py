@@ -21,4 +21,23 @@ class TestCharacter(TestCase):
         expected_name = "arbitrary"
         testobj = Character(expected_name)
         expected_position = None
+        print(expected_position)
         self.assertEqual(testobj.getposition(), expected_position)
+
+    def test_move_new_position(self):
+        expected_name = "arbitrary"
+        testobj = Character(expected_name)
+        expected_position = Position(0, 1)
+        testobj.position = Position(0, 0)
+        testobj.move(Direction.NORTH)
+        self.assertEqual(testobj.position, expected_position)
+
+    def test_enter_map(self):
+        expected_name = "arbitrary"
+        testobj = Character(expected_name)
+        testmap = GameMap
+        testobj.enter_map(testmap)
+        numpositions = 100
+        self.assertEqual(numpositions, testobj.map.getsize())
+
+        
