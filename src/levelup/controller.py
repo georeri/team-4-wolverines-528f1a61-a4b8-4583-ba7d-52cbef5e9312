@@ -10,11 +10,12 @@ class GameStatus:
     move_count: int = 0
     character: Character = Character(DEFAULT_CHARACTER_NAME)
     running: bool = False
+    starting_position: Position = None
     
     current_position: tuple = ARBITRARY_INVALID_INITIALIZED_POSITION
 
     def __str__(self):
-        return f"Moved {self.move_count} times, currently on position {self.current_position}"
+        return f"Moved {self.move_count} times, currently on position {self.current_position}, started  on position {self.starting_position}"
 
     def set_character_position(self, position: Position) -> None:
         print(f"Set character position state for testing")
@@ -32,6 +33,7 @@ class GameController:
         self.status = GameStatus()
         self.character = None
         self.map = GameMap()
+        self.status.starting_position = self.map.starting_position
 
     def start_game(self):
         if hasattr(self, "character"):
@@ -54,3 +56,6 @@ class GameController:
 
     def get_total_positions(self):
         return self.map.position_count
+    
+    
+        
