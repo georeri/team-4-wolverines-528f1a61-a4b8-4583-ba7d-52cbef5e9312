@@ -22,7 +22,22 @@ class TestGameController(TestCase):
 
     def test_move(self):
          testobj = GameController()
-         cp = Position()
-         cp = testobj.character.position
+         testobj.create_character("Eric")
+         testobj.start_game()
+         cp = testobj.character.getposition()
          testobj.character.move("n")
-         self.assertEqual(first, second)
+         self.assertNotEqual(testobj.character.getposition(), cp)
+
+    def test_set_character_position(self):
+        self.assertEqual(1, 2)
+
+    def test_get_total_positions(self):
+        testobj = GameController()
+        self.assertEqual(testobj.map.get_total_positions(),100)
+    
+
+    def test_create_character(self):
+        self.assertEqual(1, 2)
+
+    def test_start_game(self):
+        self.assertEqual(1, 2)
