@@ -20,27 +20,25 @@ class MoveLibrary:
 
     def move_in_direction(self, direction):
         self.controller = GameController()
-        self.controller.set_character_position((self.start_x, self.start_y))
-
+        self.controller.create_character("Eric")
+        self.controller.start_game()
+        self.controller.character.setposition(Position(int(self.start_x),int(self.start_y)))
         self.controller.move(Direction[direction])
 
     def character_xposition_should_be(self, expected):
     
-        end_x = self.controller.status.current_position[0]
-        if end_x != expected:
-            raise AssertionError(
-                "%s != %s" % (end_x, expected)
-            )
+        end_x = self.controller.status.current_position.coordinates[0]
+        if int(end_x) != int(expected):
+            raise AssertionError(int(end_x), int(expected))
+            
 
     def character_yposition_should_be(self, expected):
-        end_y = self.controller.status.current_position.x_position
-        print("***$$$$$$here$$$$$$$*****")
-        print(end_y)
-        if end_y != expected:
-           raise AssertionError(
-               "%s != %s" % (end_y, expected)
-            )
+        end_y = self.controller.status.current_position.coordinates[1]
+        if int(end_y) != int(expected):
+            raise AssertionError(int(end_y), int(expected))
            
 
     def character_moveCount_should_be(self, expected):
-        raise AssertionError("Not implemented")
+        self.move_count = int(self.controller.status.move_count) + int(self.move_count)
+        if int(self.move_count) != int(expected):
+         raise AssertionError(int(self.move_count), int(expected))
