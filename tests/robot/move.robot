@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation     I want to move my character. If they attempt to move past a boundary, the move results in no change in position.
+    https://images.app.goo.gl/weaUMdsRDoYvu3567
 Test Template     Move character
 Library           MoveLibrary.py
 
