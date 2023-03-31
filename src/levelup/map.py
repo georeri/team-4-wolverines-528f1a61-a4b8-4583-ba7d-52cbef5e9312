@@ -22,6 +22,14 @@ class GameMap:
         return (self.max_x * self.max_y)
 
     def is_valid_position(self, position: Position) -> bool:
+        if (position.coordinates[0] >= self.max_x):
+            return False
+        if (position.coordinates[0] < 0):
+            return False
+        if (position.coordinates[1] >= self.max_y):
+            return False
+        if (position.coordinates[1] < 0):
+            return False
         return True
 
     def calculate_position(
